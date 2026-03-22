@@ -33,12 +33,12 @@
 
 
 main {
-
-  width: 100%;
-  /* max-width: 480px; */
-  margin: 0 auto;
-  padding: 0 15px;
-  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 50px;
+  color: var(--text-main);
+  font: var(--font-body-reg);
 }
 
 body {
@@ -316,7 +316,12 @@ header h4 {
   align-items: center;
 }
 
-.product-img img, .featured-container img {
+.featured-container img {
+  max-width: 250px;
+  border-radius: 5px;
+}
+
+.product-img img {
   max-width: 250px;
   border-radius: 5px;
   margin-bottom: 15px;
@@ -333,7 +338,7 @@ header h4 {
   background-color: var(--bg-error);
   font: var(--font-subtitle);
   border-radius: 15px;
-  padding: 5px;
+  padding: 15px;
 } 
 
 .nl-cta-container p {
@@ -359,4 +364,49 @@ footer ul {
 footer a {
   color: var(--text-main);
   font: var(--font-subtitle);
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+  align-items: stretch;
+  background-color: var(--bg-muted);
+  padding: 25px;
+  border-radius: 5px;
+  font: var(--font-body-reg);
+  color: var(--text-main);
+}
+
+.product-card-btn {
+  background-color: var(--bg-accent);
+  font: var(--font-body-reg);
+  border-radius: 5px;
+}
+
+
+.map-container img {
+  max-width: 300px;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-container label {
+  margin-top: 10px;
+}
+
+.contact-submit {
+  margin-top: 20px;
+  color: var(--text-main);
+  background-color: var(--bg-accent);
+  font: var(--font-body-bold);
+}
+
+.event-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
