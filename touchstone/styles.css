@@ -410,3 +410,176 @@ footer a {
   flex-direction: column;
   align-items: center;
 }
+
+/* ====================== DESKTOP WIREFRAME MATCH (1024px+) ====================== */
+@media (min-width: 1024px) {
+  
+  /* --- 1. Header & Navigation --- */
+  .hamburger-menu {
+    display: none !important;
+  }
+
+  /* Anchor the header so we can absolutely position the logo */
+  header {
+    position: relative;
+    padding-top: 30px;
+  }
+
+  /* Move logo to top left to match cart on top right */
+  .header-logo {
+    position: absolute;
+    left: var(--side-margin);
+    top: var(--top-margin);
+    margin: 0;
+  }
+
+  .sidebar {
+    display: block !important;
+    translate: 0 !important;
+    position: static;
+    min-height: auto;
+    width: 100%;
+    background-color: transparent;
+    padding-top: 15px;
+  }
+
+  .nav-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+    padding: 0 0 20px 0;
+  }
+
+  /* Pill-shaped navigation buttons from the wireframe */
+  .nav-link a {
+    font: var(--font-body-reg);
+    color: var(--text-main);
+    border: 1px solid var(--text-main);
+    padding: 8px 30px;
+    border-radius: 25px;
+    transition: background-color 0.2s ease-in-out;
+  }
+
+  .nav-link a:hover {
+    background-color: var(--text-main);
+    color: var(--bg-dark);
+  }
+
+  /* --- 2. Global Rule of 3 (Gallery & Highlights) --- */
+  .product-gallery, 
+  .highlights-card-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .product-card, 
+  .highlights-card {
+    flex: 0 1 calc(33.333% - 30px);
+    max-width: calc(33.333% - 30px);
+    margin-bottom: 0;
+  }
+
+  /* --- 3. Homepage Specifics --- */
+  .sale-container {
+    flex-direction: row;
+    width: 900px;
+    gap: 60px;
+    margin: 0 auto;
+  }
+
+  .perks-container {
+    flex-direction: row;
+    width: 900px;
+    justify-content: space-between;
+    margin: 0 auto;
+  }
+
+  /* Fixes the "Products" wrapper so h4 tags break to new lines, but items form a row */
+  .products {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .products h4 {
+    width: 100%;
+    text-align: center;
+    margin-top: 50px;
+  }
+
+  .product-container {
+    flex: 0 1 calc(33.333% - 30px);
+    display: flex;
+    justify-content: center;
+  }
+
+  /* Category images (4 items across, converted to diamonds) */
+  .featured-container {
+    flex: 0 1 calc(25% - 30px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .featured-container img {
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%); /* CSS Diamond shape */
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+  }
+
+  /* --- 4. About Us Page --- */
+  .about-copy-contaniner {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .hours-location {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 80px;
+    max-width: 900px;
+    margin: 0 auto 40px auto;
+  }
+
+  .contact-us-container form {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  /* --- 5. Events Page --- */
+  .event-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .event-card {
+    width: 100%;
+    margin-bottom: 50px;
+  }
+
+  .event-img img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+  }
+}
+
