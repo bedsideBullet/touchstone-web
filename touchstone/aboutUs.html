@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Book Haven Bookstore - Home</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+    <script type="module" src="script.js"></script>
+  </head>
+  <body>
+    <header>
+  <img src="images/bh_logo.png" alt="book haven bookstore logo" class="header-logo" width="100px" />
+  
+  <h1>Book Haven</h1>
+  
+  <h4>bookstore</h4>
+
+  <div class="header-bottom-bar">
+    <div class="hamburger-menu">
+      <i class="fa-solid fa-bars" ></i>
+    </div>
+    
+    <div class="cart-container">
+      <i class="fa-solid fa-cart-arrow-down"></i>
+      <p>View Cart</p>
+    </div>
+  </div>
+</header>
+    <nav class="nav">
+      <ul class="nav-container">
+        <li class="nav-link"><a href="/" aria-current="page">Home</a></li>
+        <li class="nav-link"><a href="/gallery.html">Gallery</a></li>
+        <li class="nav-link"><a href="/aboutUs.html">About Us</a></li>
+        <li class="nav-link"><a href="/events.html">Events</a></li>
+      </ul>
+    </nav>
+  
+    </div>
+    <main>
+      <section class="about-copy-contaniner">
+        <h1>About Us</h1>
+        <div class="about-copy">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+            rhoncus facilisis convallis. Cras congue a sem vitae imperdiet.
+            Aliquam ipsum arcu, placerat eu scelerisque at, interdum vel libero.
+            Pellentesque ultricies consectetur mauris a malesuada. Orci varius
+            natoque penatibus et magnis dis parturient montes, nascetur
+            ridiculus mus. Vestibulum non tellus auctor, finibus magna id,
+            tincidunt ipsum.
+          </p>
+        </div>
+      </section>
+      <section class="hours-location-container">
+        <h1>Location and hours</h1>
+        <div class="hours-location">
+          <div class="hours">
+            <table class="hours-table">
+              <tr class="hours-heading-row">
+                <th colspan="4" class="hours-heading">Hours of Operation</th>
+              </tr>
+              <tr class="hours-row">
+                <td class="hours-data">Mon-Fri</td>
+                <td class="hours-data">9am</td>
+                <td class="hours-data">to</td>
+                <td class="hours-data">8pm</td>
+              </tr>
+              <tr class="hours-row">
+                <td class="hours-data">Sat</td>
+                <td class="hours-data">10am</td>
+                <td class="hours-data">to</td>
+                <td class="hours-data">6pm</td>
+              </tr>
+              <tr class="hours-row">
+                <td class="hours-data">Sun</td>
+                <td class="hours-data">11am</td>
+                <td class="hours-data">to</td>
+                <td class="hours-data">5pm</td>
+              </tr>
+            </table>
+          </div>
+          <div class="location">
+            <figure class="map-container">
+              <img src="images/location.png" alt="location map" width="100px"/>
+              <figcaption class="map-text">123 bulevard Ave</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+      <section class="contact-us-container">
+        <h1>Contact us</h1>
+        <form action="">
+          <div class="form-container">
+            <label for="reason">Reason for contact:</label>
+            <input
+              type="radio"
+              id="custom-order"
+              name="reason"
+              value="Custom Order"
+            />
+            <label for="Custom-order">Custom Order</label>
+            <input type="radio" id="comment" name="reason" value="Comment" />
+            <label for="comment">Comment</label>
+            <label for="fName">First Name:</label>
+            <input type="text" placeholder="Lirst Name" id="fName" />
+            <label for="lName">Lirst Name:</label>
+            <input type="text" placeholder="Lirst Name" id="lName" />
+            <label for="phone">Phone Number:</label>
+            <input type="phone" placeholder="(817)123-4567" id="phone" />
+            <label for="email">Email:</label>
+            <input type="email" placeholder="example@email.com" id="email" />
+            <input type="submit" value="submit" />
+          </div>
+        </form>
+      </section>
+    </main>
+    <footer class="footer">
+      <ul class="footer-nav-container">
+        <li class="footer-nav-link">
+          <a href="/">Home</a>
+        </li>
+        <li class="footer-nav-link"><a href="/gallery.html">Gallery</a></li>
+        <li class="footer-nav-link"><a href="/aboutUs.html">About Us</a></li>
+        <li class="footer-nav-link"><a href="/events.html">Events</a></li>
+      </ul>
+      <ul class="social-container">
+        <li class="social-link">
+          <a href="x.com"><i class="fa-brands fa-x-twitter"></i></a>
+        </li>
+        <li class="social-link">
+          <a href="instagram.com.com"><i class="fa-brands fa-instagram"></i></a>
+        </li>
+        <li class="social-link">
+          <a href="facebook.com"><i class="fa-brands fa-facebook-f"></i></a>
+        </li>
+      </ul>
+    </footer>
+  </body>
+</html>

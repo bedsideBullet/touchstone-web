@@ -1,0 +1,129 @@
+:root{
+  --bg-dark: #2E2E4E;
+  --bg-accent: #5C2E5C;
+  --bg-muted: #3F5461;
+  --bg-success: #3E5641;
+  --bg-error: #742C36;
+  --text-main: #C1CFD6;
+
+  --font-header-lg: bold 30px Arial, Helvetica, sans-serif;
+  --font-header-md: bold 25px Arial, Helvetica, sans-serif;
+  --font-subtitle: 15px "Comfortaa", cursive, sans-serif;
+  --font-body-bold: bold 16px Calibri, sans-serif;
+  --font-body-reg: 16px Calibri, sans-serif;
+  --font-caption: bold 11px Arial, sans-serif;
+
+  --bar-width: 60px;
+  --bar-height: 8px;
+  --hamburger-gap: 8px;
+}
+
+*, *::after, *::before {
+  box-sizing: border-box;
+  
+
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #2e2e4e;
+  color: var(--text-main);
+  margin: 0;
+}
+
+.hamburger-menu {
+  display: flex;
+  flex-direction: column;
+}
+
+.hamburger-menu::after,
+.hamburger-menu::before,
+.hamburger-menu input {
+  content: "";
+  width: var(--bar-width);
+  height: var(--bar-height);
+  background-color: var(--text-main);
+}
+
+header {
+  display: flex;
+  flex-direction: column; 
+  align-items: center;   
+  padding: 20px 0 0 0;
+  width: 100%;
+}
+
+
+.header-bottom-bar {
+  display: flex;
+  flex-direction: row;     
+  justify-content: space-between; 
+  align-items: center;
+  width: 100%;             
+  padding: 10px 20px;         
+  box-sizing: border-box;  
+}
+
+.hamburger-menu {
+  font-size: 24px;
+  
+}
+
+.cart-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font: var(--font-caption);
+  cursor: pointer;
+}
+
+.cart-container p {
+  margin: 0;
+}
+
+
+
+.sale-container {
+  display: flex;
+  flex-direction: row; 
+  align-items: stretch; 
+  padding: 25px;
+  background-color: var(--bg-muted); 
+  border-radius: 25px;
+  max-width: 430px;
+  gap: 25px;
+}
+
+.sale-img {
+  flex-shrink: 0;
+}
+
+.sale-container img {
+  width: 215px; 
+  height: auto;
+  display: block; 
+}
+
+.sale-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; 
+  padding: 10px 0; 
+}
+
+.sale-copy button {
+  padding: 10px 20px;
+  background-color: var( --bg-accent);
+  color: var(--text-main);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font: var(--font-body-bold);
+  margin-top: 10px;
+}
+
+
+
+
