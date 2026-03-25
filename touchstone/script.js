@@ -3,6 +3,9 @@ const addToCartBtn = document.querySelectorAll('.add-to-cart-btn');
 const clearCartBtn = document.querySelectorAll('.clear-cart-btn');
 const processCartBtn = document.querySelectorAll('.process-cart-btn');
 const contactSubmitBtn = document.querySelector('.contact-submit');
+const cartBtn = document.querySelector('#cart-btn');
+const closeModal = document.querySelector('.close-modal');
+const modalOverlay = document.querySelector('.modal-overlay');
 
 
 const signUpAlert = () => {
@@ -23,6 +26,14 @@ const processCart = () => {
 
 const contactSubmit = () => {
     alert("Thankyou for your messages!")
+}
+
+const openCart = () => {
+    modalOverlay.style.display = 'block';
+}
+
+const closeCart = () => {
+    modalOverlay.style.display = 'none';
 }
 
 if(signUp) {
@@ -48,6 +59,11 @@ if(processCart) {
 });
 }
 
-if(contactSubmit) {
-    contactSubmitBtn.addEventListener('click', contactSubmit);
-};
+if (cartBtn) {
+    cartBtn.addEventListener('click', openCart);
+}
+
+if (closeModal) {
+    closeModal.addEventListener('click', closeCart);
+}
+

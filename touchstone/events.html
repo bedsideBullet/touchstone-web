@@ -33,7 +33,7 @@
       </nav>
     </aside>
     
-    <div class="cart-container">
+    <div class="cart-container" id="cart-btn" onclick="() => openCart()">
       <i class="fa-solid fa-cart-arrow-down"></i>
       <p>View Cart</p>
     </div>
@@ -75,9 +75,9 @@
         <div class="event-card">
           <h3>Event Name</h3>
           <div class="event-img">
-            <img src="" alt="event image" />
+            <img src="images/storefront.jpg" alt="event image" width="300px" />
           </div>
-          <img src="images/storefront.jpg" alt="event image" width="300px" />
+          <div class="event-description">
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
               rhoncus facilisis convallis. Cras congue a sem vitae imperdiet.
@@ -103,25 +103,50 @@
       </div>
     </main>
     <footer class="footer">
-      <ul class="footer-nav-container">
-        <li class="footer-nav-link">
-          <a href="/">Home</a>
-        </li>
-        <li class="footer-nav-link"><a href="/gallery.html">Gallery</a></li>
-        <li class="footer-nav-link"><a href="/aboutUs.html">About Us</a></li>
-        <li class="footer-nav-link"><a href="/events.html">Events</a></li>
-      </ul>
-      <ul class="social-container">
-        <li class="social-link">
-          <a href="x.com"><i class="fa-brands fa-x-twitter"></i></a>
-        </li>
-        <li class="social-link">
-          <a href="instagram.com.com"><i class="fa-brands fa-instagram"></i></a>
-        </li>
-        <li class="social-link">
-          <a href="facebook.com"><i class="fa-brands fa-facebook-f"></i></a>
-        </li>
-      </ul>
+      <div class="footer-content">
+        <ul class="footer-nav-container">
+          <li class="footer-nav-link">
+            <a href="/" aria-current="page">Home</a>
+          </li>
+          <li class="footer-nav-link"><a href="/gallery.html">Gallery</a></li>
+          <li class="footer-nav-link"><a href="/aboutUs.html">About Us</a></li>
+          <li class="footer-nav-link"><a href="/events.html">Events</a></li>
+        </ul>
+        <div class="nl-cta-container">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
+            ullamcorper
+          </p>
+          <button class="sign-up">Sign up</button>
+        </div>
+        <ul class="social-container">
+          <li class="social-link">
+            <a href="x.com"><i class="fa-brands fa-x-twitter"></i></a>
+          </li>
+          <li class="social-link">
+            <a href="instagram.com.com"
+              ><i class="fa-brands fa-instagram"></i
+            ></a>
+          </li>
+          <li class="social-link">
+            <a href="facebook.com"><i class="fa-brands fa-facebook-f"></i></a>
+          </li>
+        </ul>
+      </div>
     </footer>
+    <div id="cart-modal" class="modal-overlay">
+      <div class="modal-content">
+        <span class="close-modal" onclick="() => closeCart()">&times;</span>
+        <h2>Your Cart</h2>
+        <div id="cart-items-container">
+          <p class="empty-cart-msg">Your cart is currently empty.</p>
+        </div>
+        <div class="cart-total-section">
+          <p>Total: <span id="cart-total">$0.00</span></p>
+          <button class="process-cart-btn checkout-btn">Checkout</button>
+          <button class="clear-cart-btn checkout-btn" style="background-color: var(--bg-error);">Clear Cart</button>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
