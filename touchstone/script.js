@@ -1,6 +1,6 @@
 const signUp = document.querySelector(".sign-up");
 const clearCartBtn = document.querySelectorAll(".clear-cart-btn");
-const processCartBtn = document.querySelectorAll(".process-cart-btn");
+// const processCartBtn = document.querySelectorAll(".process-cart-btn");
 const contactSubmitBtn = document.querySelector(".contact-submit");
 const cartBtn = document.querySelector("#cart-btn");
 const closeModal = document.querySelector(".close-modal");
@@ -54,17 +54,17 @@ const renderProducts = () => {
 }
 
 const renderCart = () => {
-    const container = document.getElementById("cart-items-container");
+    const container = document.getElementById("cart-items-container");  
+    const totalContainer = document.getElementById("cart-total-section");
     
-    if (!container) {
-        console.error("Cart container not found!");
-        return;
-    }
+    if (!container) return;
 
     container.innerHTML = "";
+    let cartTotal = 0; 
 
     if (customerCart.length === 0) {
         container.innerHTML = `<p class="empty-cart-msg">Your cart is currently empty.</p>`;
+        if (totalContainer) totalContainer.innerHTML = ""; 
         return;
     }
 
@@ -72,31 +72,41 @@ const renderCart = () => {
         <table class="cart-table">
             <thead>
                 <tr>
-                    <!-- Added specific column classes for better alignment -->
                     <th class="cart-header item-col">Item</th>
-                    <th class="cart-header price-col">Price</th>
                     <th class="cart-header qty-col">Qty</th>
+                    <th class="cart-header price-col">Price</th>
                 </tr>
             </thead>
             <tbody>
     `;
 
-    for (let i = 0; i < customerCart.length; i++) {
-        const item = customerCart[i];
-        const itemTotal = item.price * (item.quantity || 1);
-
+    customerCart.forEach((item) => {
+        cartTotal += item.price; 
         html += `
             <tr class="cart-item-row">
                 <td class="cart-item-name">${item.name}</td>
-                <td class="cart-item-price">$${item.price.toFixed(2)}</td>
                 <td class="cart-item-quantity">${item.quantity || 1}</td>
+                <td class="cart-item-price">$${item.price.toFixed(2)}</td>
             </tr>
         `;
-    }
+    });
 
     html += `</tbody></table>`;
-
     container.innerHTML = html;
+    
+    // Inject the buttons into the totalContainer
+    if (totalContainer) {
+        totalContainer.innerHTML = `
+              <hr>
+              <p>Total: <span id="cart-total">$${cartTotal.toFixed(2)}</span></p>
+              <button class="process-cart-btn checkout-btn">Checkout</button>
+              <button class="clear-cart-btn checkout-btn" style="background-color: var(--bg-error);">Clear Cart</button>
+        `;
+
+        // Re-attach listeners to the NEWLY created buttons
+        totalContainer.querySelector(".clear-cart-btn").addEventListener("click", clearCart);
+        totalContainer.querySelector(".process-cart-btn").addEventListener("click", processCart);
+    }
 };
 
 
@@ -146,11 +156,11 @@ if (clearCart) {
   });
 }
 
-if (processCart) {
-  processCartBtn.forEach((btn) => {
-    btn.addEventListener("click", processCart);
-  });
-}
+// if (processCart) {
+//   processCartBtn.forEach((btn) => {
+//     btn.addEventListener("click", processCart);
+//   });
+// }
 
 if (cartBtn) {
   cartBtn.addEventListener("click", openCart);
