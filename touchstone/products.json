@@ -1,0 +1,58 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Book 1",
+      "price": 19.99,
+      "image": "images/Client3_Book1.png"
+    },
+    {
+      "id": 2,
+      "name": "Book 2",
+      "price": 29.99,
+      "image": "images/Client3_Book2.png"
+    },
+    {
+      "id": 3,
+      "name": "Book 3",
+      "price": 39.99,
+      "image": "images/Client3_Book3.png"
+    },
+    {
+      "id": 4,
+      "name": "Magazine  4",
+      "price": 49.99,
+      "image": "images/Client3_Magazine1.png"
+    },
+    {
+      "id": 5,
+      "name": "Magazine 5",
+      "price": 59.99,
+      "image": "images/Client3_Magazine2.png"
+    },
+    {
+      "id": 6,
+      "name": "Magazine 6",
+      "price": 69.99,
+      "image": "images/Client3_Magazine3.png"
+    },
+    {
+      "id": 7,
+      "name": "Totebag",
+      "price": 79.99,
+      "image": "images/Client3_Totebag.png"
+    },
+    {
+      "id": 8,
+      "name": "Notebook",
+      "price": 89.99,
+      "image": "images/Client3_Notebook.png"
+    },
+    {
+      "id": 9,
+      "name": "Stickers",
+      "price": 99.99,
+      "image": "images/Client3_Stickers.png"
+    }
+  ]
+}
