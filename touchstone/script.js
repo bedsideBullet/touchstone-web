@@ -56,6 +56,11 @@ const renderProducts = () => {
 const renderCart = () => {
     const container = document.getElementById("cart-items-container");  
     const totalContainer = document.getElementById("cart-total-section");
+
+    const storedCart = sessionStorage.getItem("customerCart");
+  if (storedCart) {
+    customerCart = JSON.parse(storedCart);
+  }
     
     if (!container) return;
 
@@ -116,25 +121,28 @@ const signUpAlert = () => {
 
 const addToCart = (product) => {
     customerCart.push(product);
+    sessionStorage.setItem('customerCart', JSON.stringify(customerCart));
     alert("Item added to cart");
     renderCart();
-};``
+};
 
 const clearCart = () => {
   alert("Items removed from cart");
     customerCart = [];
+    sessionStorage.removeItem('customerCart');
     renderCart();
 };
 
 const processCart = () => {
   alert("Thank you for your purchase");
   customerCart = [];
+  sessionStorage.removeItem('customerCart');
     closeCart();
 };
 
-const contactSubmit = () => {
-  alert("Thankyou for your messages!");
-};
+// const contactSubmit = () => {
+//   alert("Thankyou for your messages!");
+// };
 
 const openCart = () => {
     renderCart();
@@ -156,11 +164,6 @@ if (clearCart) {
   });
 }
 
-// if (processCart) {
-//   processCartBtn.forEach((btn) => {
-//     btn.addEventListener("click", processCart);
-//   });
-// }
 
 if (cartBtn) {
   cartBtn.addEventListener("click", openCart);
@@ -171,7 +174,43 @@ if (closeModal) {
 }
 
 
+// const contactSubmitBtn = document.querySelector(".contact-submit");
 
+const contactSubmit = () => {
+  const firstName = document.querySelector('input[name="firstName"]')?.value;
+  const lastName = document.querySelector('input[name="lastName"]')?.value;
+  const phone = document.querySelector('input[name="phone"]')?.value;
+  const email = document.querySelector('input[name="email"]')?.value;
+  const reason = document.querySelector('input[name="reason"]:checked')?.value;
+  const message = document.querySelector('textarea[name="message"]')?.value;
+
+  if (!firstName || !lastName || !email || !message) {
+    alert("Please fill out all required fields");
+    return;
+  }
+
+  // Save to localStorage
+  const contactData = {
+    firstName,
+    lastName,
+    phone,
+    email,
+    reason,
+    message,
+    timestamp: new Date().toISOString(),
+  };
+
+  let contacts = JSON.parse(localStorage.getItem("customerContacts")) || [];
+  contacts.push(contactData);
+  localStorage.setItem("customerContacts", JSON.stringify(contacts));
+
+  alert("Thank you! Your message has been saved.");
+  document.getElementById("contact-form").reset();
+};
+
+if (contactSubmitBtn) {
+  contactSubmitBtn.addEventListener("click", contactSubmit);
+}
 
     
     

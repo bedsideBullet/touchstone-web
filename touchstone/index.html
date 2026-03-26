@@ -167,21 +167,13 @@
         </ul>
       </div>
     </footer>
-    <!-- Modal -->
-
     <div id="cart-modal" class="modal-overlay">
-      <div class="modal-content">
-        <span class="close-modal" onclick="() => closeCart()">&times;</span>
-        <h2>Your Cart</h2>
-        <div id="cart-items-container">
-          <p class="empty-cart-msg">Your cart is currently empty.</p>
-        </div>
-        <div class="cart-total-section">
-          <p>Total: <span id="cart-total">$0.00</span></p>
-          <button class="process-cart-btn checkout-btn">Checkout</button>
-          <button class="clear-cart-btn checkout-btn" style="background-color: var(--bg-error);">Clear Cart</button>
-        </div>
-      </div>
-    </div>
+  <div class="modal-content">
+    <span class="close-modal" onclick="closeCart()">&times;</span>
+    <h2>Your Cart</h2>
+    <div id="cart-items-container"></div>
+    <div id="cart-total-section"></div>
+  </div>
+</div>
   </body>
 </html>

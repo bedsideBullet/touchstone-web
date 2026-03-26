@@ -94,33 +94,35 @@
         </div>
       </section>
       <section class="contact-us-container">
-        <h1>Contact us</h1>
-        <form action="">
-          <div class="form-container">
-            <div class="form-radio">
-              <label for="reason">Reason for contact:</label>
-            <input
-              type="radio"
-              id="custom-order"
-              name="reason"
-              value="Custom Order"
-            />
-            <label for="Custom-order">Custom Order</label>
-            <input type="radio" id="comment" name="reason" value="Comment" />
-            <label for="comment">Comment</label>
-            </div>
-            <label for="fName">First Name:</label>
-            <input type="text" placeholder="First Name" id="fName" />
-            <label for="lName">Last Name:</label>
-            <input type="text" placeholder="Last Name" id="lName" />
-            <label for="phone">Phone Number:</label>
-            <input type="phone" placeholder="(817)123-4567" id="phone" />
-            <label for="email">Email:</label>
-            <input type="email" placeholder="example@email.com" id="email" />
-            <input class="contact-submit" type="submit" value="submit" />
-          </div>
-        </form>
-      </section>
+  <h1>Contact us</h1>
+  <form id="contact-form">
+    <div class="form-container">
+      <div class="form-radio">
+        <label for="reason">Reason for contact:</label>
+        <input
+          type="radio"
+          id="custom-order"
+          name="reason"
+          value="Custom Order"
+        />
+        <label for="custom-order">Custom Order</label>
+        <input type="radio" id="comment" name="reason" value="Comment" />
+        <label for="comment">Comment</label>
+      </div>
+      <label for="fName">First Name:</label>
+      <input type="text" placeholder="First Name" id="fName" name="firstName" />
+      <label for="lName">Last Name:</label>
+      <input type="text" placeholder="Last Name" id="lName" name="lastName" />
+      <label for="phone">Phone Number:</label>
+      <input type="tel" placeholder="(817)123-4567" id="phone" name="phone" />
+      <label for="email">Email:</label>
+      <input type="email" placeholder="example@email.com" id="email" name="email" />
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" placeholder="Your message here..." required></textarea>
+      <button class="contact-submit" type="button">Submit</button>
+    </div>
+  </form>
+</section>
     </main>
     <footer class="footer">
       <div class="footer-content">
@@ -155,18 +157,12 @@
       </div>
     </footer>
     <div id="cart-modal" class="modal-overlay">
-      <div class="modal-content">
-        <span class="close-modal" onclick="() => closeCart()">&times;</span>
-        <h2>Your Cart</h2>
-        <div id="cart-items-container">
-          <p class="empty-cart-msg">Your cart is currently empty.</p>
-        </div>
-        <div class="cart-total-section">
-          <p>Total: <span id="cart-total">$0.00</span></p>
-          <button class="process-cart-btn checkout-btn">Checkout</button>
-          <button class="clear-cart-btn checkout-btn" style="background-color: var(--bg-error);">Clear Cart</button>
-        </div>
-      </div>
-    </div>
+  <div class="modal-content">
+    <span class="close-modal" onclick="closeCart()">&times;</span>
+    <h2>Your Cart</h2>
+    <div id="cart-items-container"></div>
+    <div id="cart-total-section"></div>
+  </div>
+</div>
   </body>
 </html>
