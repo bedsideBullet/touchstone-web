@@ -1,6 +1,5 @@
 const signUp = document.querySelector(".sign-up");
 const clearCartBtn = document.querySelectorAll(".clear-cart-btn");
-// const processCartBtn = document.querySelectorAll(".process-cart-btn");
 const contactSubmitBtn = document.querySelector(".contact-submit");
 const cartBtn = document.querySelector("#cart-btn");
 const closeModal = document.querySelector(".close-modal");
@@ -99,7 +98,6 @@ const renderCart = () => {
     html += `</tbody></table>`;
     container.innerHTML = html;
     
-    // Inject the buttons into the totalContainer
     if (totalContainer) {
         totalContainer.innerHTML = `
               <hr>
@@ -108,7 +106,6 @@ const renderCart = () => {
               <button class="clear-cart-btn checkout-btn" style="background-color: var(--bg-error);">Clear Cart</button>
         `;
 
-        // Re-attach listeners to the NEWLY created buttons
         totalContainer.querySelector(".clear-cart-btn").addEventListener("click", clearCart);
         totalContainer.querySelector(".process-cart-btn").addEventListener("click", processCart);
     }
@@ -140,10 +137,6 @@ const processCart = () => {
     closeCart();
 };
 
-// const contactSubmit = () => {
-//   alert("Thankyou for your messages!");
-// };
-
 const openCart = () => {
     renderCart();
   modalOverlay.style.display = "block";
@@ -174,7 +167,6 @@ if (closeModal) {
 }
 
 
-// const contactSubmitBtn = document.querySelector(".contact-submit");
 
 const contactSubmit = () => {
   const firstName = document.querySelector('input[name="firstName"]')?.value;
@@ -184,12 +176,7 @@ const contactSubmit = () => {
   const reason = document.querySelector('input[name="reason"]:checked')?.value;
   const message = document.querySelector('textarea[name="message"]')?.value;
 
-  if (!firstName || !lastName || !email || !message) {
-    alert("Please fill out all required fields");
-    return;
-  }
 
-  // Save to localStorage
   const contactData = {
     firstName,
     lastName,
@@ -214,4 +201,34 @@ if (contactSubmitBtn) {
 
     
     
-    
+ document.addEventListener("DOMContentLoaded", () => {
+    const submitBtn = document.querySelector(".contact-submit");
+
+    if (submitBtn) {
+        submitBtn.addEventListener("click", () => {
+            // Get form values
+            const firstName = document.getElementById("fName")?.value.trim();
+            const lastName  = document.getElementById("lName")?.value.trim();
+            const email     = document.getElementById("email")?.value.trim();
+            const phone     = document.getElementById("phone")?.value.trim();
+            const reason    = document.querySelector('input[name="reason"]:checked')?.value || "Not specified";
+            const message   = document.getElementById("message")?.value.trim();
+
+            const contactData = {
+                firstName,
+                lastName,
+                email,
+                phone: phone || "Not provided",
+                reason,
+                message,
+                timestamp: new Date().toISOString()
+            };
+
+            let contacts = JSON.parse(localStorage.getItem("customerContacts")) || [];
+            contacts.push(contactData);
+            localStorage.setItem("customerContacts", JSON.stringify(contacts));
+
+            document.getElementById("contact-form").reset();
+        });
+    }
+});   

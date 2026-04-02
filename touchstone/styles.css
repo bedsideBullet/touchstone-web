@@ -399,6 +399,7 @@ footer a {
   border: none;
   padding: 5px;
   margin-top: 5px;
+  cursor: pointer;
 }
 
 .map-container img {
